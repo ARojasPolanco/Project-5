@@ -6,7 +6,53 @@ export const getAllPokemons = async () => {
     return data.results;
 }
 
-export const getPokemonByUrl = async ({pokemonUrl}) => {
+export const getPokemonsByType = async (pokemonType) => {
+    const url = `https://pokeapi.co/api/v2/type/${pokemonType}/`
+    const { data } = await axios.get(url)
+    const formatPokemons = data.pokemon.map(({ pokemon }) => pokemon)
+    return formatPokemons;
+}
+
+export const getPokemonById = async (pokemonId) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`
+    const { data } = await axios.get(url)
+    const pokemon = {
+        id: data.id,
+        name: data.name,
+        types: formatTypes(data.types),
+        stats: formatStats(data.stats),
+        image: data.sprites.versions["generation-v"]["black-white"].animated.front_default,
+        weight: data.weight,
+        height: data.height,
+        abilities: data.abilities,
+        moves: data.moves
+    }
+    return pokemon;
+}
+
+export const getPokemonByUrl = async (pokemonUrl) => {
     const { data } = await axios.get(pokemonUrl)
-    return data;
+    const pokemon = {
+        id: data.id,
+        name: data.name,
+        types: formatTypes(data.types),
+        stats: formatStats(data.stats),
+        image: data.sprites.versions["generation-v"]["black-white"].animated.front_default
+    }
+    return pokemon;
+}
+
+const formatStats = (stats) => {
+    return stats.map((stat) => ({
+        name: stat.stat.name,
+        value: stat.base_stat
+    }))
+}
+
+const formatTypes = (types) => {
+    return types.map((type) => type.type.name)
+}
+
+export const joinPokemonTypes = (types = []) => {
+    return types.slice(0, 2).join(' / ')
 }

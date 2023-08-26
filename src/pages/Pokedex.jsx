@@ -1,38 +1,33 @@
-import { useSelector } from "react-redux"
-import store from "../store"
-import { useEffect, useState } from "react"
-import { getAllPokemons } from "../services/pokemons"
 import PokemonList from "../components/pokedex/PokemonList"
+import usePokedex from "../components/hooks/usePokedex"
 
 const Pokedex = () => {
-const [pokemons, setPokemons] = useState([])
-
-    const {name} = useSelector(store => store.trainer)
-
-    useEffect(() => {
-     getAllPokemons()
-     .then((data) => setPokemons(data))
-     .catch((err) => console.log(err))
-    }, [])
+    const { name,
+        pokemonName,
+        handleChange,
+        setPokemonName,
+        pokemonType,
+        setPokemonType,
+        pokemonByName } = usePokedex()
 
     return (
         <main>
             <section>
                 <p><span>Welcome {name}</span></p>
                 <form>
-                <div>
-                    <input placeholder="search pokemon..." type="text" />
-                    <button>Search</button>
-                </div>
+                    <div>
+                        <input value={pokemonName} onChange={handleChange(setPokemonName)} placeholder="search pokemon..." type="text" />
+                    </div>
 
-                <select>
-                    <option value="">all pokemon</option>
-                </select>
+                    <select value={pokemonType} onChange={handleChange(setPokemonType)}>
+                        <option value="">all pokemon</option>
+                        <option value="rock">rock</option>
+                    </select>
                 </form>
             </section>
 
 
-            <PokemonList pokemons={pokemons}/>
+            <PokemonList pokemons={pokemonByName} />
         </main>
     )
 }

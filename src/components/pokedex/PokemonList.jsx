@@ -1,12 +1,11 @@
 import PokemonCard from "./PokemonCard"
 
-const PokemonList = ({pokemons}) => {
-    console.log(pokemons)
+const PokemonList = ({ pokemons }) => {
   return (
-    <section>
-        {
-            pokemons.map((pokemon) => <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url}/>)
-        }
+    <section className="grid px-4 gap-4 grid-cols-[repeat(auto-fit,_minmax(220px,_1fr))]">
+      {
+        pokemons.map((pokemon) => <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />)
+      }
     </section>
   )
 }
