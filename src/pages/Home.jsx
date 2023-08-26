@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import FooterPokeball from "../components/layout/FooterPokeball"
 import { loginTrainer } from "../store/slices/trainer.slice"
-import store from "../store"
+
 import { useNavigate } from "react-router-dom"
 
 const Home = () => {
@@ -25,11 +25,11 @@ const Home = () => {
                     <h2>Hello trainer</h2>
                     <p>To start give me your name</p>
                     <form onSubmit={handleSumbit}>
-                        <input 
-                        autoComplete="off" 
-                        placeholder="your name..." 
-                        required id="nameTrainer" 
-                        type="text" />
+                        <input
+                            autoComplete="off"
+                            placeholder="your name..."
+                            required id="nameTrainer"
+                            type="text" />
                         <button>Start!</button>
                     </form>
                 </article>
