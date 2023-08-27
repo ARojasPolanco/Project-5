@@ -1,14 +1,74 @@
 const bgStylePokemonType = {
-    'grass': 'bg-grass-bg',
-    'fire': 'bg-fire-bg'
+    'normal': 'bg-gradient-to-b from-normal-txt to-normal-bg',
+    'fighting': 'bg-gradient-to-b from-fighting-txt to-fighting-bg',
+    'flying': 'bg-gradient-to-b from-flying-txt to-flying-bg',
+    'poison': 'bg-gradient-to-b from-poison-txt to-poison-bg',
+    'ground': 'bg-gradient-to-b from-ground-txt to-ground-bg',
+    'rock': 'bg-gradient-to-b from-rock-txt to-rock-bg',
+    'bug': 'bg-gradient-to-b from-bug-txt to-bug-bg',
+    'ghost': 'bg-gradient-to-b from-ghost-txt to-ghost-bg',
+    'steel': 'bg-gradient-to-b from-steel-txt to-steel-bg',
+    'fire': 'bg-gradient-to-b from-fire-txt to-fire-bg',
+    'water': 'bg-gradient-to-b from-water-txt to-water-bg',
+    'grass': 'bg-gradient-to-b from-grass-txt to-grass-bg',
+    'electric': 'bg-gradient-to-b from-electric-txt from-electric-bg',
+    'psychic': 'bg-gradient-to-b from-psychic-txt to-psychic-bg',
+    'ice': 'bg-gradient-to-b from-ice-txt to-ice-bg',
+    'dragon': 'bg-gradient-to-b from-dragon-txt to-dragon-bg',
+    'dark': 'bg-gradient-to-b from-dark-txt to-dark-bg',
+    'fairy': 'bg-gradient-to-b from-fairy-txt to-fairy-bg',
+    'unknown': 'bg-gradient-to-b from-unknown-txt to-unknown-bg',
+    'shadow': 'bg-gradient-to-b from-shadow-txt to-shadow-bg'
 }
 
 const borderStyledPokemonByPokemonType = {
-    "grass": "border-[5px] border-grass-bg",
-    "fire": "border-[5px] border-fire-bg",
+    'normal': 'border-[4px] border-normal-txt',
+    'fighting': 'border-[4px] border-fighting-txt',
+    'flying': 'border-[4px] border-flying-txt',
+    'poison': 'border-[4px] border-poison-txt',
+    'ground': 'border-[4px] border-ground-txt',
+    'rock': 'border-[4px] border-rock-txt',
+    'bug': 'border-[4px] border-bug-txt',
+    'ghost': 'border-[4px] border-ghost-txt',
+    'steel': 'border-[4px] border-steel-txt',
+    'fire': 'border-[4px] border-fire-txt',
+    'water': 'border-[4px] border-water-txt',
+    'grass': 'border-[4px] border-grass-txt',
+    'electric': 'border-[4px] border-electric-txt',
+    'psychic': 'border-[4px] border-psychic-txt',
+    'ice': 'border-[4px] border-ice-txt',
+    'dragon': 'border-[4px] border-dragon-txt',
+    'dark': 'border-[4px] border-dark-txt',
+    'fairy': 'border-[4px] border-fairy-txt',
+    'unknown': "border-[4px] border-unknown-txt",
+    'shadow': "border-[4px] border-shadow-txt",
+}
+
+const textColorByType = {
+    'normal': 'text-normal-txt',
+    'fighting': 'text-fighting-txt',
+    'flying': 'text-flying-txt',
+    'poison': 'text-poison-txt',
+    'ground': 'text-ground-txt',
+    'rock': 'text-rock-txt',
+    'bug': 'text-bug-txt',
+    'ghost': 'text-ghost-txt',
+    'steel': 'text-steel-txt',
+    'fire': 'text-fire-txt',
+    'water': 'text-water-txt',
+    'grass': 'text-grass-txt',
+    'electric': 'text-electric-txt',
+    'psychic': 'text-psychic-txt',
+    'ice': 'text-ice-txt',
+    'dragon': 'text-dragon-txt',
+    'dark': 'text-dark-txt',
+    'fairy': 'text-fairy-txt',
+    'unknown': "text-unknown-txt",
+    'shadow': "text-shadow-txt",
 }
 
 export {
     bgStylePokemonType,
-    borderStyledPokemonByPokemonType
+    borderStyledPokemonByPokemonType,
+    textColorByType
 }

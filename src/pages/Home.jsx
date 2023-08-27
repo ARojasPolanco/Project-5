@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import FooterPokeball from "../components/layout/FooterPokeball"
 import { loginTrainer } from "../store/slices/trainer.slice"
-import store from "../store"
+
 import { useNavigate } from "react-router-dom"
 
 const Home = () => {
@@ -38,6 +38,8 @@ const Home = () => {
                             <button className="bg-transparent w-[80px] aspect-square rounded-full absolute -top-19 right-33 text-white border-4 border-black-pokeball hover:scale-110"></button>
                             <span className="absolute left-24 text-xl animate-bounce w-32"> ⇠ Let's go!</span>
                         </div>
+
+          
                     </form>
                 </article>
             </section>

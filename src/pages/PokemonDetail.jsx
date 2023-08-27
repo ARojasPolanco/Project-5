@@ -15,8 +15,10 @@ const PokemonDetail = () => {
     }, [])
 
     return (
-        <main className="flex justify-center items-center">
-            <article className="w-[min(100%,_400px)]">
+        <main className="flex justify-center items-center bg-flying-bg h-screen p-4">
+            <div className="division bg-red-pokeball h-full w-full absolute top-0 left-0"></div>
+            <div className="division bg-black-pokeball h-full w-full absolute top-0 -left-10"></div>
+            <article className="w-[min(100%,_400px)] z-50">
                 <header>
                     <div>
                         <img src={pokemonData?.image} alt="" />
