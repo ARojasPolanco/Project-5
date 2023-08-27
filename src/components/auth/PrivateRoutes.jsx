@@ -1,14 +1,22 @@
 import { useSelector } from "react-redux"
-import { Navigate, Outlet } from "react-router-dom"
+import { Link, Navigate, Outlet } from "react-router-dom"
 
 const PrivateRoutes = () => {
 
-  const {name} = useSelector((store) => store.trainer)
+  // const modalError = () => {
+  //   Swal.fire({
+  //     icon: 'error',
+  //     title: 'Oops...',
+  //     text: 'Something went wrong!',
+  //   })
+  // }
 
-  if(name){
-    return <Outlet/>
+  const { name } = useSelector((store) => store.trainer)
+
+  if (name) {
+    return <Outlet />
   }
-  return <Navigate to="/"/>
+  return <Navigate to="/" />
 }
 
 export default PrivateRoutes

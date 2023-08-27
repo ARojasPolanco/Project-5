@@ -21,7 +21,9 @@ export const getPokemonById = async (pokemonId) => {
         name: data.name,
         types: formatTypes(data.types),
         stats: formatStats(data.stats),
-        image: data.sprites.front_default,
+        abilities: formatAbilities(data.abilities),
+        moves: formatMoves(data.moves),
+        image: data.sprites.other["official-artwork"].front_default,
         weight: data.weight,
         height: data.height,
         abilities: data.abilities,
@@ -37,7 +39,7 @@ export const getPokemonByUrl = async (pokemonUrl) => {
         name: data.name,
         types: formatTypes(data.types),
         stats: formatStats(data.stats),
-        image: data.sprites.front_default
+        image: data.sprites.other["official-artwork"].front_default,
     }
     return pokemon;
 }
@@ -51,6 +53,14 @@ const formatStats = (stats) => {
 
 const formatTypes = (types) => {
     return types.map((type) => type.type.name)
+}
+
+const formatAbilities = (abilities) => {
+    return abilities.map((ability) => ability.ability.name)
+}
+
+const formatMoves = (moves) => {
+    return moves.map((move) => move.move.name )
 }
 
 export const joinPokemonTypes = (types = []) => {

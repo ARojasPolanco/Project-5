@@ -7,3 +7,22 @@
 .division {
     clip-path: polygon(50% 0, 0 0, 0 100%, 25% 100%);
 }
+
+.nameTitle {
+clip-path: polygon(0 100%, 1% 0, 100% 0, 100% 100%);
+}
+
+.scrollBar::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 2rem;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+    background-color: #ec1c24;
+    border-radius: 2rem;
+}
