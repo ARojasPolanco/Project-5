@@ -21,7 +21,7 @@ export const getPokemonById = async (pokemonId) => {
         name: data.name,
         types: formatTypes(data.types),
         stats: formatStats(data.stats),
-        image: data.sprites.versions["generation-v"]["black-white"].animated.front_default,
+        image: data.sprites.front_default,
         weight: data.weight,
         height: data.height,
         abilities: data.abilities,
@@ -37,7 +37,7 @@ export const getPokemonByUrl = async (pokemonUrl) => {
         name: data.name,
         types: formatTypes(data.types),
         stats: formatStats(data.stats),
-        image: data.sprites.versions["generation-v"]["black-white"].animated.front_default
+        image: data.sprites.front_default
     }
     return pokemon;
 }
