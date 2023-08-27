@@ -57,9 +57,10 @@ export default {
       'red': '#FF0000',
       'gray': '#454545',
       'red-pokeball': '#ec1c24',
-
       'black-pokeball': '#231f20',
-      "transparent": "#ffffff00"
+      "transparent": "#ffffff00",
+      "light-gray": "#ededed",
+      "medium-gray": "#d9d9d9"
     }
   },
   plugins: [],
