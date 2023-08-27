@@ -45,8 +45,8 @@ export default {
       'dragon-txt': '#458b95',
       'dark-bg': '#5a5979',
       'dark-txt': '#050706',
-      'fairy:bg': '#eb1269',
-      'fairt-txt': '#eb1269',
+      'fairy-bg': '#f71c90',
+      'fairy-txt': '#eb1269',
       'unknown-bg': '#35433e',
       'unknown-txt': '#45665b',
       'shadow-bg': '#301645',
@@ -57,7 +57,9 @@ export default {
       'red': '#FF0000',
       'gray': '#454545',
       'red-pokeball': '#ec1c24',
-      'black-pokeball': '#231f20'
+
+      'black-pokeball': '#231f20',
+      "transparent": "#ffffff00"
     }
   },
   plugins: [],
