@@ -6,21 +6,33 @@ import { Link } from "react-router-dom"
 
 const PokemonCard = ({ pokemonUrl }) => {
   const [pokemonInfo, setPokemonInfo] = useState(null)
+  const [pokeballTransition, setPokeballTransition] = useState(true)
+  const [squareTransition, setSquareTransition] = useState(false)
+
+  setTimeout(() => {
+    setSquareTransition(true)
+  }, 1000);
+
 
   useEffect(() => {
     getPokemonByUrl(pokemonUrl)
-      .then((data) => setPokemonInfo(data))
+      .then((data) => {
+        setPokemonInfo(data)
+        setPokeballTransition(false)
+      })
       .catch((err) => console.log(err))
   }, [])
 
   return (
-    <div className="h-[280px] aspect-square relative border-[4px] border-black rounded-full top-0 right-0 z-10 overflow-hidden">
-      <div className="bg-red-pokeball h-1/2 w-full absolute z-10 border-b-4"></div>
-      <div className="absolute h-[80px] aspect-square rounded-full bg-white z-20 left-[100px] bottom-[100px] border-8 after:block after:content-[''] after:h-8 after:aspect-square after:bg-white after:rounded-full after:absolute after:left-1/2 after:-translate-x-1/2 after:top-1/2 after:-translate-y-1/2 after:border-4 after:border-black"></div>
-      <div className="bg-white h-1/2 w-full absolute bottom-0 z-10 border-t-4"></div>
+    <div className={`h-[280px] aspect-square relative border-[4px] top-0 right-0 z-10 overflow-hidden ${squareTransition ? borderStyledPokemonByPokemonType[pokemonInfo?.types[0]] : 'border-black rounded-full'} transition-all`}>
+      <div className={`w-full h-1/2 relative ${pokeballTransition ? 'top-[140px] bg-bug-bg' : '-top-10'} transition-all duration-700`}>
+        <div className="bg-red-pokeball z-20 h-full w-full border-b-4 absolute bottom-[140px]"></div>
+        <div className="absolute h-[80px] aspect-square rounded-full bg-white z-20 left-[100px] bottom-[100px] border-8 after:block after:content-[''] after:h-8 after:aspect-square after:bg-white after:rounded-full after:absolute after:left-1/2 after:-translate-x-1/2 after:top-1/2 after:-translate-y-1/2 after:border-4 after:border-black"></div>
+      </div>
+      <div className={`bg-white h-1/2 w-full absolute z-10 border-t-4 ${pokeballTransition ? 'bottom-0 ' : '-bottom-[140px]'} transition-all duration-700`}></div>
       <Link
         to={'/pokedex/' + pokemonInfo?.id}
-        className={`h-[280px] aspect-square absolute text-center capitalize border-[2px] rounded-lg font-Montse ${borderStyledPokemonByPokemonType[pokemonInfo?.types[0]]}`}>
+        className={`h-[280px] aspect-square absolute text-center capitalize font-Montse -mt-[140px]`}>
         <header className={`h-[100px] relative ${bgStylePokemonType[pokemonInfo?.types[0]]}`}>
           <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 h-[110px] aspect-square">
             <img className="h-full w-full object-contain" src={pokemonInfo?.image} alt="" />
