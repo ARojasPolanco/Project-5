@@ -1,9 +1,9 @@
 const FooterPokeball = () => {
     return (
-        <section className="relative flex justify-center items-center w-full overflow-hidden">
-           <div className="bg-red-pokeball w-[300px] h-[160px] rounded-t-full border-4 border-black-pokeball">
-           <div className="bg-white w-[50px] aspect-square rounded-full absolute min-[320px]:left-[132px] min-[320px]:-bottom-7 text-white border-4 border-black-pokeball "></div>
-           </div>
+        <section className="flex flex-col justify-center items-center gap-5 min-[400px]:flex-row max-w-[1024px] w-full  mb-2">
+                  <div className="w-[35%]  min-[400px]:w-[20%] hover:scale-110 transition-transform cursor-pointer"> <img  src="/images/108.png"/></div>
+                  <div className="w-[35%]  min-[400px]:w-[20%] hover:scale-110 transition-transform cursor-pointer"> <img  src="/images/130.png"/></div>
+                  <div className="w-[35%]  min-[400px]:w-[20%] hover:scale-110 transition-transform cursor-pointer"> <img src="/images/178.png"/></div>
         </section>
     )
 }
