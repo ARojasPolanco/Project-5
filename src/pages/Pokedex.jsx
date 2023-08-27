@@ -11,7 +11,7 @@ const Pokedex = () => {
         pokemonByName } = usePokedex()
 
     return (
-        <main className="flex flex-col gap-8 justify-center items-center py-4">
+        <main>
             <section className="text-center py-6 flex flex-col gap-4">
                 <p className="text-lg font-bold font-Montse">Welcome <span className="text-lg font-Montse font-bold text-fire-bg capitalize">{name}</span></p>
                 <form className="flex justify-center items-center">

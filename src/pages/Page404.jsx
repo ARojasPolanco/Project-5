@@ -1,8 +1,10 @@
-import React from 'react'
-
 const Page404 = () => {
     return (
-        <div>Page404</div>
+        <main className="min-h-screen w-full flex justify-center items-center">
+            <div>
+                <img src="/images/page-404.png" alt="" />
+            </div>
+        </main>
     )
 }
 
