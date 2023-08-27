@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.division {
+    clip-path: polygon(50% 0, 0 0, 0 100%, 25% 100%);
+}
