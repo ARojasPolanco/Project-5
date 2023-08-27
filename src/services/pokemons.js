@@ -39,7 +39,7 @@ export const getPokemonByUrl = async (pokemonUrl) => {
         name: data.name,
         types: formatTypes(data.types),
         stats: formatStats(data.stats),
-        image: data.sprites.front_default
+        image: data.sprites.other["official-artwork"].front_default,
     }
     return pokemon;
 }
