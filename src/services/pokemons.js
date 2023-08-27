@@ -22,6 +22,7 @@ export const getPokemonById = async (pokemonId) => {
         types: formatTypes(data.types),
         stats: formatStats(data.stats),
         abilities: formatAbilities(data.abilities),
+        moves: formatMoves(data.moves),
         image: data.sprites.other["official-artwork"].front_default,
         weight: data.weight,
         height: data.height,
@@ -56,6 +57,10 @@ const formatTypes = (types) => {
 
 const formatAbilities = (abilities) => {
     return abilities.map((ability) => ability.ability.name)
+}
+
+const formatMoves = (moves) => {
+    return moves.map((move) => move.move.name )
 }
 
 export const joinPokemonTypes = (types = []) => {

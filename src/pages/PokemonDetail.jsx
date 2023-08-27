@@ -21,15 +21,15 @@ const PokemonDetail = () => {
         <main className="flex bg-medium-gray h-screen p-4 relative">
             <div className={`division ${bgUnderColorByType[pokemonData?.types[0]]} h-full w-full absolute top-0 left-0`}></div>
             <div className={`division ${bgOverColorByType[pokemonData?.types[0]]} h-full w-full absolute top-0 -left-10`}></div>
-            <article className="w-[min(100%,_400px)] z-50 flex flex-col gap-4">
-                <section className="bg-light-gray rounded-xl w-64 p-2">
+            <article className="w-11/12 min-[600px]:max-w-[50%] z-50 flex flex-col gap-4">
+                <section className="bg-light-gray rounded-xl w-full p-2 z-10">
                     
-                    <StatsBarList stats={pokemonData?.stats} types={pokemonData?.types} abilities={pokemonData?.abilities}/>
+                    <StatsBarList stats={pokemonData?.stats} types={pokemonData?.types} abilities={pokemonData?.abilities} moves={pokemonData?.moves}/>
                 </section>
-                <section className="flex flex-col bottom-0 right-0 absolute">
-                    <h2 className={`uppercase font-bold font-Montse text-white ${bgUnderColorByType[pokemonData?.types[0]]} flex gap-6 justify-center mx-4 nameTitle`}>{pokemonData?.name} <span>#{pokemonData?.id}</span></h2>
+                <section className="flex flex-col bottom-0 right-0 absolute w-full">
+                    <h2 className={`uppercase font-bold font-Montse text-white ${bgUnderColorByType[pokemonData?.types[0]]} flex gap-6 justify-center mx-4 nameTitle w-2/3 min-[400px]:w-[45%] self-end`}>{pokemonData?.name} <span>#{pokemonData?.id}</span></h2>
                     
-                    <div className="w-60 ">
+                    <div className="w-2/3 min-[400px]:w-[45%] self-end">
                         <img className="w-full" src={pokemonData?.image} alt="" />
                     </div>
                 </section>
