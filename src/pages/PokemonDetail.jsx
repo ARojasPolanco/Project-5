@@ -29,7 +29,7 @@ const PokemonDetail = () => {
                 <section className="flex flex-col bottom-0 right-0 absolute w-full">
                     <h2 className={`uppercase font-bold font-Montse text-white ${bgUnderColorByType[pokemonData?.types[0]]} flex gap-6 justify-center mx-4 nameTitle w-2/3 min-[400px]:w-[45%] self-end`}>{pokemonData?.name} <span>#{pokemonData?.id}</span></h2>
                     
-                    <div className="w-2/3 min-[400px]:w-[45%] self-end">
+                    <div className="w-2/3 min-[400px]:w-[40%] self-end">
                         <img className="w-full" src={pokemonData?.image} alt="" />
                     </div>
                 </section>
