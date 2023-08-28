@@ -60,9 +60,6 @@ const formatAbilities = (abilities) => {
 }
 
 const formatMoves = (moves) => {
-    return moves.map((move) => move.move.name )
+    return moves.map((move) => move.move.name)
 }
 
-export const joinPokemonTypes = (types = []) => {
-    return types.slice(0, 2).join(' / ')
-}

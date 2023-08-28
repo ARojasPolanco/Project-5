@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getPokemonByUrl, joinPokemonTypes } from "../../services/pokemons"
+import { getPokemonByUrl } from "../../services/pokemons"
 import StatList from "./StatList"
 import { bgStylePokemonType, borderStyledPokemonByPokemonType, textColorByType } from "../shared/pokemons"
 import { Link } from "react-router-dom"
@@ -36,7 +36,15 @@ const PokemonCard = ({ pokemonUrl }) => {
         </header>
         <section className="font-Inter">
           <h3 className="text-lg font-bold">{pokemonInfo?.name}</h3>
-          <h4 className='text-lg font-bold'>{joinPokemonTypes(pokemonInfo?.types)}</h4>
+          <h4 className='text-lg font-bold'>
+            <span className={`${textColorByType[pokemonInfo?.types[0]]}`}>{pokemonInfo?.types[0]}</span>
+            {
+              pokemonInfo?.types[1] && <span> / </span>
+            }
+            {
+              pokemonInfo?.types[1] && <span className={`${textColorByType[pokemonInfo?.types[1]]}`}>{pokemonInfo?.types[1]}</span>
+            }
+          </h4>
           <h5 className="text-sm mb-2">Types</h5>
           <hr />
           <StatList stats={pokemonInfo?.stats} />
