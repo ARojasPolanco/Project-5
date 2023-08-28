@@ -11,15 +11,15 @@ const Pokedex = () => {
         pokemonByName } = usePokedex()
 
     return (
-        <main>
+        <main className="bg-medium-gray min-h-screen w-full">
             <section className="text-center py-6 flex flex-col gap-4">
                 <p className="text-lg font-bold font-Montse">Welcome <span className="text-lg font-Montse font-bold text-fire-bg capitalize">{name}</span></p>
-                <form className="flex justify-center items-center">
+                <form className="flex flex-col min-[500px]:flex-row justify-center items-center gap-2">
                     <div>
-                        <input value={pokemonName} onChange={handleChange(setPokemonName)} placeholder="search pokemon..." type="text" />
+                        <input className="rounded-full p-2 px-4 outline-none" value={pokemonName} onChange={handleChange(setPokemonName)} placeholder="search pokemon..." type="text" />
                     </div>
 
-                    <select value={pokemonType} onChange={handleChange(setPokemonType)}>
+                    <select className="rounded-full p-2 outline-none" value={pokemonType} onChange={handleChange(setPokemonType)}>
                         <option value="">All pokemon</option>
                         <option value="normal">Normal</option>
                         <option value="fighting">Fighting</option>

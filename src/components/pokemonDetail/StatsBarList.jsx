@@ -10,8 +10,6 @@ const StatsBarList = ({ stats, types, abilities, moves }) => {
     setChangeState(e);
   };
 
-  console.log(changeState);
-
   return (
     <section className="grid grid-cols-3 place-items-center overflow-hidden gap-2">
       <button
