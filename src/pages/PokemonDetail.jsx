@@ -22,7 +22,7 @@ const PokemonDetail = () => {
             <div className={`division ${bgUnderColorByType[pokemonData?.types[0]]} h-full w-full absolute top-0 left-0`}></div>
             <div className={`division ${bgOverColorByType[pokemonData?.types[0]]} h-full w-full absolute top-0 -left-10`}></div>
             <article className="w-11/12 min-[600px]:max-w-[50%] z-50 flex flex-col gap-4">
-                <section className="bg-light-gray rounded-xl w-full p-2 ">
+                <section className="bg-light-gray rounded-xl w-full p-2 z-10">
                     
                     <StatsBarList stats={pokemonData?.stats} types={pokemonData?.types} abilities={pokemonData?.abilities} moves={pokemonData?.moves}/>
                 </section>
