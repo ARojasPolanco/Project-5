@@ -1,13 +1,18 @@
 import axios from "axios"
 
 export const getAllPokemons = async () => {
-    const URL = 'https://pokeapi.co/api/v2/pokemon?limit=20'
+    const URL = `https://pokeapi.co/api/v2/pokemon?limit=1281/`
     const { data } = await axios.get(URL)
     return data.results;
 }
 
-export const getPokemonsByType = async (pokemonType) => {
-    const url = `https://pokeapi.co/api/v2/type/${pokemonType}/`
+export const getAllTypes = async () => {
+    const { data } = await axios.get("https://pokeapi.co/api/v2/type")
+    return data.results
+}
+
+export const getPokemonsByType = async (pokemonType, limit) => {
+    const url = `https://pokeapi.co/api/v2/type/${pokemonType}/?limit=${limit}/`
     const { data } = await axios.get(url)
     const formatPokemons = data.pokemon.map(({ pokemon }) => pokemon)
     return formatPokemons;
