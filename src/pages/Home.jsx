@@ -37,7 +37,7 @@ const Home = () => {
                             <div className="bg-red-pokeball w-[80px] h-[40px] rounded-t-full pt-5 border-2 border-black-pokeball"></div>
                             <div className="bg-white w-[80px] h-[40px]  rounded-b-full pb-5 border-2 border-black-pokeball"></div>
                             <div className="bg-white w-[30px] aspect-square rounded-full absolute -top-19 right-33 text-white border-4 border-black-pokeball"></div>
-                            <button className="bg-transparent w-[80px] aspect-square rounded-full absolute -top-19 right-33 text-white border-4 border-black-pokeball hover:scale-110"></button>
+                            <button className="bg-transparent w-[80px] aspect-square rounded-full absolute -top-19 right-33 text-white border-4 border-black-pokeball hover:scale-110 transition-transform"></button>
                             <span className="absolute right-0 text-xl animate-bounce w-26 min-[500px]:-right-16 "> ⇠ Go!</span>
                         </div>
 
