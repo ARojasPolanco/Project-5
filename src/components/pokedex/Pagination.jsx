@@ -28,8 +28,9 @@ const Pagination = ({ lastPages, pagesInCurrentBlock, setCurrentPage, currentPag
             {
                 pagesInCurrentBlock.map((page) => <li className={`cursor-pointer hover:bg-black hover:text-white p-4 h-6 rounded-full aspect-square flex justify-center items-center transition-colors ${currentPage === page ? 'text-white bg-black ' : ''}`} key={page} onClick={(() => setCurrentPage(page))}>{page}</li>)
             }
-            <li onClick={handleNextPage}><i className='bx bx-chevron-right cursor-pointer'></i></li>
-            <li onClick={handleLastPage}><i className='bx bx-chevrons-right cursor-pointer'></i></li>
+            {currentPage <= lastPages - FIRST_PAGE && <li onClick={handleNextPage}><i className='bx bx-chevron-right cursor-pointer'></i></li>}
+
+            {currentPage <= lastPages - FIRST_PAGE && <li onClick={handleLastPage}><i className='bx bx-chevrons-right cursor-pointer'></i></li>}
         </ul>
     )
 }

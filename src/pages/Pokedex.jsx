@@ -1,11 +1,17 @@
+
 import PokemonList from "../components/pokedex/PokemonList"
 import usePokedex from "../components/hooks/usePokedex"
 import { paginateData } from "../components/utils/pagination"
 import { useState } from "react"
 import Pagination from "../components/pokedex/Pagination"
+import { useDispatch, useSelector } from "react-redux"
+import { quantityPokemon } from "../store/slices/pokemonsShow.slice"
 
 const Pokedex = () => {
     const [currentPage, setCurrentPage] = useState(1)
+
+    const dispatch = useDispatch()
+    const {quantity} =useSelector(store => store.quantity)
 
     const { name,
         pokemonName,
@@ -20,7 +26,13 @@ const Pokedex = () => {
     const { itemsInCurrentPage,
         lastPages,
         pagesInCurrentBlock
-    } = paginateData(pokemonByName, currentPage)
+    } = paginateData(pokemonByName, currentPage, quantity)
+
+const handleChangeQuantityPokemons = (e) => {
+    const valueRangePokemon = e.target.value
+    dispatch(quantityPokemon(valueRangePokemon))
+}
+
 
     return (
         <main className="bg-medium-gray min-h-screen w-full">
@@ -37,6 +49,10 @@ const Pokedex = () => {
                             types.map((type) => <option key={type.name} value={type.name} className="capitalize">{type.name}</option>)
                         }
                     </select>
+                    <div className="flex gap-2 font-Montse font-boldx">
+                        <input type="range" min={4} max={20} step={4} onChange={handleChangeQuantityPokemons} value={quantity} className="rangeBar bg-medium-gray"/>
+                        <span className="w-8">{quantity}</span>
+                    </div>
                 </form>
             </section>
 

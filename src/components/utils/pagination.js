@@ -1,11 +1,10 @@
-const paginateData = (items, currentPage) => {
-    const ITEMS_PER_PAGE = 20
+const paginateData = (items, currentPage, itemsPerPage) => {
 
-    const sliceEnd = currentPage * ITEMS_PER_PAGE
-    const sliceStart = sliceEnd - ITEMS_PER_PAGE
+    const sliceEnd = currentPage * itemsPerPage
+    const sliceStart = sliceEnd - itemsPerPage
     const itemsInCurrentPage = items.slice(sliceStart, sliceEnd)
 
-    const lastPages = Math.ceil(items.length / ITEMS_PER_PAGE)
+    const lastPages = Math.ceil(items.length / itemsPerPage)
 
     const PAGE_PER_BLOCK = 5
 
