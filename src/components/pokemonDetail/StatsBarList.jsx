@@ -33,7 +33,7 @@ const StatsBarList = ({ stats, types, abilities, moves }) => {
       <section
         className={`col-span-3 flex flex-col scrollBar relative w-full items-center ${
           changeState === "moves" && "overflow-y-scroll overflow-hidden"
-        }`}
+        } `}
       >
         <div
           className={`${

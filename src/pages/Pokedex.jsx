@@ -35,60 +35,66 @@ const Pokedex = () => {
   };
 
   return (
-    <main className="bg-medium-gray min-h-screen w-full dark:bg-special-blue dark:text-white transition-colors">
-      <section className="text-center py-6 flex flex-col gap-4">
-        <p className="text-lg font-bold font-Montse">
-          Welcome{" "}
-          <span className="text-lg font-Montse font-bold text-fire-bg capitalize">
-            {name}
-          </span>
-        </p>
-        <form className="flex flex-col min-[500px]:flex-row justify-center items-center gap-2">
-          <div>
-            <input
-              className="rounded-full p-2 px-4 outline-none dark:bg-special-dark-blue transition-colors"
-              value={pokemonName}
-              onChange={handleChange(setPokemonName)}
-              placeholder="search pokemon..."
-              type="text"
-            />
-          </div>
+    <main className="bg-medium-gray min-h-screen w-full dark:bg-special-blue dark:text-white transition-colors flex justify-center">
+      <section className="w-[min(100%,_1024px)]">
+        <section className="text-center py-6 flex flex-col gap-4">
+          <p className="text-lg font-bold font-Montse">
+            Welcome{" "}
+            <span className="text-lg font-Montse font-bold text-fire-bg capitalize">
+              {name}
+            </span>
+          </p>
+          <form className="flex flex-col min-[500px]:flex-row justify-center items-center gap-2">
+            <div>
+              <input
+                className="rounded-full p-2 px-4 outline-none dark:bg-special-dark-blue transition-colors"
+                value={pokemonName}
+                onChange={handleChange(setPokemonName)}
+                placeholder="search pokemon..."
+                type="text"
+              />
+            </div>
 
-          <select
-            className="rounded-full p-2 outline-none dark:bg-special-dark-blue transition-colors"
-            value={pokemonType}
-            onChange={handleChange(setPokemonType)}
-          >
-            <option value="">All pokemon</option>
-            {types.map((type) => (
-              <option key={type.name} value={type.name} className="capitalize">
-                {type.name}
-              </option>
-            ))}
-          </select>
-          <div className="flex gap-2 font-Montse font-bold transition-colors">
-            <input
-              type="range"
-              min={4}
-              max={20}
-              step={4}
-              onChange={handleChangeQuantityPokemons}
-              value={quantity}
-              className="rangeBar bg-medium-gray dark:bg-special-blue transition-colors"
-            />
-            <span className="w-8">{quantity}</span>
-          </div>
-        </form>
+            <select
+              className="rounded-full p-2 outline-none dark:bg-special-dark-blue transition-colors"
+              value={pokemonType}
+              onChange={handleChange(setPokemonType)}
+            >
+              <option value="">All pokemon</option>
+              {types.map((type) => (
+                <option
+                  key={type.name}
+                  value={type.name}
+                  className="capitalize"
+                >
+                  {type.name}
+                </option>
+              ))}
+            </select>
+            <div className="flex gap-2 font-Montse font-bold transition-colors">
+              <input
+                type="range"
+                min={4}
+                max={20}
+                step={4}
+                onChange={handleChangeQuantityPokemons}
+                value={quantity}
+                className="rangeBar bg-medium-gray dark:bg-special-blue transition-colors"
+              />
+              <span className="w-8">{quantity}</span>
+            </div>
+          </form>
+        </section>
+
+        <Pagination
+          lastPages={lastPages}
+          pagesInCurrentBlock={pagesInCurrentBlock}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
+
+        <PokemonList pokemons={itemsInCurrentPage} />
       </section>
-
-      <Pagination
-        lastPages={lastPages}
-        pagesInCurrentBlock={pagesInCurrentBlock}
-        setCurrentPage={setCurrentPage}
-        currentPage={currentPage}
-      />
-
-      <PokemonList pokemons={itemsInCurrentPage} />
     </main>
   );
 };
