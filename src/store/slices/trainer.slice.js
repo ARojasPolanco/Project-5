@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  name: ''
-}
+  name: "",
+};
 
 const trainerSlice = createSlice({
   initialState,
-  name: 'trainer',
+  name: "trainer",
   reducers: {
     loginTrainer: (state, action) => {
-      const newName = action.payload
-      state.name = newName
-    }
-  }
+      const newName = action.payload;
+      state.name = newName;
+    },
+  },
 });
 
-export const { loginTrainer } = trainerSlice.actions
+export const { loginTrainer } = trainerSlice.actions;
 
-export default trainerSlice.reducer
+export default trainerSlice.reducer;

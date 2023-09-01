@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    quantity: 20
-}
+  quantity: 20,
+};
 
 const pokemonShowSlice = createSlice({
-    initialState,
-    name: 'quantity',
-    reducers: {
-        quantityPokemon: (state, {payload}) => {
-            const newQuantity = payload
-            state.quantity = newQuantity
-        }
-    }
-})
+  initialState,
+  name: "quantity",
+  reducers: {
+    quantityPokemon: (state, { payload }) => {
+      const newQuantity = payload;
+      state.quantity = newQuantity;
+    },
+  },
+});
 
-export const {quantityPokemon} = pokemonShowSlice.actions
+export const { quantityPokemon } = pokemonShowSlice.actions;
 
-export default pokemonShowSlice.reducer
+export default pokemonShowSlice.reducer;
