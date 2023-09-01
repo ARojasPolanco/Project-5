@@ -5,14 +5,12 @@ import Pokedex from "./pages/Pokedex";
 import Page404 from "./pages/Page404";
 import PokemonDetail from "./pages/PokemonDetail";
 import PrivateRoutes from "./components/auth/PrivateRoutes";
-import { handleDarkMode } from "./components/utils/darkMode";
+import DarkMode from "./components/DarkMode";
 
 function App() {
   return (
-    <main className="relative min-h-screen w-full ">
-      <div onClick={handleDarkMode} className="h-10 aspect-square absolute top-2 left-2 cursor-pointer z-[100]">
-        <img src="/images/moon.png" alt="" />
-      </div>
+    <main className="relative min-h-screen w-full">
+      <DarkMode />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route element={<PrivateRoutes />}>

@@ -20,7 +20,7 @@ const PokemonDetail = () => {
   }, []);
 
   return (
-    <main className="grid grid-rows-2 bg-medium-gray h-screen p-4 relative overflow-hidden">
+    <main className="grid grid-rows-2 bg-medium-gray h-screen p-4 relative overflow-hidden dark:bg-special-blue dark:text-white transition-colors">
       <Link
         to={"/pokedex/"}
         className={`${
@@ -40,7 +40,7 @@ const PokemonDetail = () => {
         } h-full w-full absolute top-0 -left-10`}
       ></div>
       <article className="w-full z-20 h-full gap-2 mt-8 min-[600px]:w-[500px]">
-        <section className="bg-light-gray rounded-xl w-full p-2 z-10">
+        <section className="bg-light-gray rounded-xl w-full p-2 z-10 dark:bg-special-dark-blue transition-colors">
           <StatsBarList
             stats={pokemonData?.stats}
             types={pokemonData?.types}
@@ -66,7 +66,7 @@ const PokemonDetail = () => {
             {pokemonData?.types.map((type) => (
               <h4
                 key={type}
-                className={`${bgOverColorByType[type]} text-white px-4 rounded-full text-center uppercase font-Montse min-[600px]:text-3xl`}
+                className={`${bgOverColorByType[type]} text-white px-4 rounded-full text-center uppercase font-Montse min-[600px]:text-3xl border-special-blue border`}
               >
                 {type}
               </h4>
