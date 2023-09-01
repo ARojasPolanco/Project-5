@@ -16,10 +16,10 @@ const Home = () => {
     }
 
     return (
-        <main className="min-h-screen flex flex-col justify-around items-center bg-[url(/images/pokemonbg2.gif)] bg-cover bg-center text-white">
+        <main className="min-h-screen flex flex-col justify-around items-center bg-[url(/images/pokemonbg2.gif)] bg-cover bg-center text-white px-2 dark:bg-[url(/images/pokemonbgdark.gif)] dark:text-black dark:">
             <section className="font-Inter">
-                <article className="flex flex-col justify-center items-center gap-2 bg-black/40 p-2 py-2 rounded-md">
-                    <div className="flex justify-center items-center py-2">
+                <article className="flex flex-col justify-center items-center gap-1 bg-black/40 p-2 dark:bg-white/40 rounded-md mt-12 transition-colors">
+                    <div className="flex justify-center items-center">
                         <img className="p-2" src="/images/banner.png" alt="" />
                     </div>
 
@@ -34,7 +34,7 @@ const Home = () => {
                             required
                         />
                         <div className="relative  w-full h-20 flex flex-col justify-center items-center">
-                            <div className="dark:bg-poison-txt bg-red-pokeball w-[80px] h-[40px] rounded-t-full pt-5 border-2 border-black-pokeball"></div>
+                            <div className="dark:bg-poison-txt bg-red-pokeball w-[80px] h-[40px] rounded-t-full pt-5 border-2 border-black-pokeball transition-colors"></div>
                             <div className="bg-white w-[80px] h-[40px]  rounded-b-full pb-5 border-2 border-black-pokeball"></div>
                             <div className="bg-white w-[30px] aspect-square rounded-full absolute -top-19 right-33 text-white border-4 border-black-pokeball"></div>
                             <button className="bg-transparent w-[80px] aspect-square rounded-full absolute -top-19 right-33 text-white border-4 border-black-pokeball hover:scale-110 transition-transform"></button>

@@ -20,7 +20,7 @@ const PokemonDetail = () => {
   }, []);
 
   return (
-    <main className="grid grid-rows-2 bg-medium-gray h-screen p-4 relative overflow-hidden">
+    <main className="grid grid-rows-2 bg-medium-gray h-screen p-4 relative overflow-hidden dark:bg-special-blue dark:text-white transition-colors">
       <Link
         to={"/pokedex/"}
         className={`${
@@ -39,8 +39,8 @@ const PokemonDetail = () => {
           bgOverColorByType[pokemonData?.types[0]]
         } h-full w-full absolute top-0 -left-10`}
       ></div>
-      <article className="w-full z-20 h-full gap-2 mt-8 min-[600px]:w-[500px]">
-        <section className="bg-light-gray rounded-xl w-full p-2 z-10">
+      <article className="w-full z-20 h-full gap-2 mt-8 min-[600px]:w-[450px]">
+        <section className="bg-light-gray rounded-xl w-full p-2 z-10 dark:bg-special-dark-blue transition-colors mt-4">
           <StatsBarList
             stats={pokemonData?.stats}
             types={pokemonData?.types}
@@ -49,11 +49,11 @@ const PokemonDetail = () => {
           />
         </section>
       </article>
-      <section className="flex flex-col  w-11/12  gap-2 place-self-end z-[15] min-[900px]:w-10/12">
+      <section className="flex flex-col  w-80  gap-2 place-self-end z-[15] min-[900px]:w-10/12">
         <h2
           className={`uppercase font-bold font-Montse text-white min-[900px]:w-2/5 ${
             bgUnderColorByType[pokemonData?.types[0]]
-          } flex gap-4 justify-center nameTitle w-2/3 mr-4 self-end`}
+          } flex gap-4 justify-center nameTitle w-52 mr-4 self-end`}
         >
           {pokemonData?.name} <span>#{pokemonData?.id}</span>
         </h2>
@@ -66,13 +66,13 @@ const PokemonDetail = () => {
             {pokemonData?.types.map((type) => (
               <h4
                 key={type}
-                className={`${bgOverColorByType[type]} text-white px-4 rounded-full text-center uppercase font-Montse min-[600px]:text-3xl`}
+                className={`${bgOverColorByType[type]} text-white px-4 rounded-full text-center uppercase font-Montse min-[900px]:text-3xl border-medium-gray dark:border-special-blue border`}
               >
                 {type}
               </h4>
             ))}
           </div>
-          <div className="w-52 min-[900px]:w-7/12 place-self-end min-[900px]:max-w-[400px]">
+          <div className="w-44 min-[900px]:w-7/12 min-[900px]:max-w-[400px] min-[900px]:place-self-end">
             <img className="w-full" src={pokemonData?.image} alt="" />
           </div>
         </section>
