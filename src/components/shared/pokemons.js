@@ -140,5 +140,5 @@ export {
   textColorByType,
   bgUnderColorByType,
   bgOverColorByType,
-  bgStatsPokemonType
+  bgStatsPokemonType,
 };
